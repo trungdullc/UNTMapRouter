@@ -7,21 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".AboutUs">
 
-    <Button android:id="@+id/backActivityButton"
+    <!-- IMPORTANT: Change Information in android:text only, Edit in strings.xml -->
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/back"
-        style="@style/Widget.App.BasicButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898"/>
-
-    <TextView android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="About Our App: UNT Map Route"
+        android:text="@string/about_title"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
@@ -29,30 +20,47 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"/>
+        app:layout_constraintVertical_bias="0.5" />
 
-    <TextView android:id="@+id/textView3"
-        android:layout_width="364dp"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
         android:layout_height="86dp"
-        android:text="Welcome to UNT Map Route App, a navigating system for students at UNT. Developed by a team of 5 students who are trying to simplify how one travels around UNT."
+        android:text="@string/about_intro"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.5"/>
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="VisualLintLongText" />
 
-    <TextView android:id="@+id/textView4"
-        android:layout_width="376dp"
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
         android:layout_height="371dp"
-        android:text="Meet Our Team:\n\nTrung Du: Asian Wizard, enchanting users and teammates with his coding knowledge\n\nAndres Montoyo: Pokemon Trainer, fearlessly tracks down and captures bugs before they can cause mischief and enless hours of pain\n\nNathaniel Schimpf: Starwars Jedi, with magical hands craft lines of code to bring the app to life\n\nSain Madrigal: Coding Ninja, gathers insights and feedback to help team improve the app\n\nKoffi Amematekpo: Data Paladin, defends the code realm to dazzle users and bring joy to their navigation experience thru accessibility and usabilty"
+        android:text="@string/about_memberinfo"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/backActivityButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.5"/>
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="VisualLintLongText" />
+
+    <Button
+        android:id="@+id/backActivityButton"
+        style="@style/Widget.App.BasicButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:textColor="#FFF8E1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.898" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

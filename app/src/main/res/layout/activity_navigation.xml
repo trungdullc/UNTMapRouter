@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Navigation">
 
+    <!-- Source drop down menu, don't mess with themes.xml or get errors -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout"
         style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
@@ -14,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25sp"
         android:layout_marginEnd="25sp"
-        android:hint="Select a source"
+        android:hint="@string/src_hint"
         app:boxCornerRadiusBottomEnd="10sp"
         app:boxCornerRadiusBottomStart="10sp"
         app:boxCornerRadiusTopEnd="10sp"
@@ -30,10 +31,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="none"
-            app:simpleItems="@array/options_list" />
-
+            app:simpleItems="@array/options_list"
+            tools:ignore="VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Destination drop down menu, don't mess with themes.xml or get errors -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout2"
         style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
@@ -42,7 +44,7 @@
         android:layout_marginStart="25sp"
         android:layout_marginTop="20sp"
         android:layout_marginEnd="25sp"
-        android:hint="Select a destination"
+        android:hint="@string/dest_hint"
         app:boxCornerRadiusBottomEnd="10sp"
         app:boxCornerRadiusBottomStart="10sp"
         app:boxCornerRadiusTopEnd="10sp"
@@ -58,17 +60,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="none"
-            app:simpleItems="@array/options_list" />
-
+            app:simpleItems="@array/options_list"
+            tools:ignore="VisualLintTextFieldSize" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Calculating Route Button -->
     <Button
         android:id="@+id/Calculate"
+        style="@style/Widget.App.BasicButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="144dp"
-        style="@style/Widget.App.BasicButton"
-        android:text="Calculate"
+        android:text="@string/calculate_button"
+        android:textColor="#FFF8E1"
         app:layout_constraintBottom_toTopOf="@+id/aboutButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -78,10 +82,11 @@
 
     <Button
         android:id="@+id/aboutButton"
+        style="@style/Widget.App.BasicButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/Widget.App.BasicButton"
-        android:text="@string/about_us"
+        android:text="@string/about_us_button"
+        android:textColor="#FFF8E1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

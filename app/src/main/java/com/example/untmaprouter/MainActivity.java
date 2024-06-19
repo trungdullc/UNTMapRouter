@@ -12,8 +12,7 @@ import android.view.View;                           // Du was here
 import android.widget.Button;                       // Du was here
 
 public class MainActivity extends AppCompatActivity {
-    // Button Action when clicked to go to navigation.xml
-    Button startButton;         // Right click to import and use Button class
+    Button startButton;             // Right click to import and use Button class
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        // Start Button logic when clicked on goes to Navigation activity/page/screen
         startButton = findViewById(R.id.startButton);   // Extract from xml and initialize
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override

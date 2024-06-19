@@ -26,6 +26,7 @@ public class AboutUs extends AppCompatActivity {
             return insets;
         });
 
+        // Back Button logic when clicked on About Us activity/page/screen
         backActivity = findViewById(R.id.backActivityButton);
         backActivity.setOnClickListener(new View.OnClickListener() {
             @Override

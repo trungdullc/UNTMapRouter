@@ -2,6 +2,7 @@ package com.example.untmaprouter;
 
 import java.util.*;
 
+// Teammates algorithm, I just separated into a external class so need public keyword
 public class Graph {
     private Map<Node, List<Edge>> adjList;
 

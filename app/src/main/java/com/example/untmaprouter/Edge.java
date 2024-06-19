@@ -1,9 +1,10 @@
 package com.example.untmaprouter;
 
+// Teammates algorithm, I just separated into a external class so need public keyword
 // Edge class covering roads with distance, direction, and linked location
 public class Edge {
-    private Node from;
-    private Node to;
+    private Node from;              // basically a doubly linked list, prev
+    private Node to;                // basically a doubly linked list, next
     private double weight;
     private String direction;
 

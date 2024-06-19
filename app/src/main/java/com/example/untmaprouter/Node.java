@@ -1,6 +1,7 @@
 package com.example.untmaprouter;
 
-// Node class covering buildings and interections
+// Teammates algorithm, I just separated into a external class so need public keyword
+// Node class covering buildings and intersections
 public class Node {
     private String name;
 

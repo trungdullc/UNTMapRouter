@@ -15,8 +15,8 @@ import java.util.*;
 
 public class MapSolution extends AppCompatActivity {
     Button backMap;
-    public int src = -1,dest = -1;                // Du's global variable from previous page
-    private TextView src3;
+    public int src = -1,dest = -1;                  // IMPORTANT: Du's global variable from previous page
+    private TextView src3;                          // Area to output your System.out.ln in Android Studio Style
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class MapSolution extends AppCompatActivity {
             return insets;
         });
 
+        // Back Button logic when clicked on goes to Navigation activity/page/screen
         backMap = findViewById(R.id.backMapButton);
         backMap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,10 +42,11 @@ public class MapSolution extends AppCompatActivity {
 
         src3 = findViewById(R.id.src2);
 
+        // Important: If needed this the string format of chosen src and destination
         String receivedSrc = getIntent().getStringExtra("keysrc");
         String receivedDest = getIntent().getStringExtra("keydest");
 
-        // DEBUG Testing setting src by parsing string
+        // Converting the string source into and int from 1 to 15
         if (receivedSrc.equals("01 Art Building")) src = 1;
         else if (receivedSrc.equals("02 Auditorium")) src = 2;
         else if (receivedSrc.equals("03 Chemistry")) src = 3;
@@ -61,7 +63,7 @@ public class MapSolution extends AppCompatActivity {
         else if (receivedSrc.equals("14 Sycamore Hall")) src = 14;
         else if (receivedSrc.equals("15 Terrill Hall")) src = 15;
 
-        // DEBUG Testing setting dest by parsing string
+        // Converting the string destination into and int from 1 to 15
         if (receivedDest.equals("01 Art Building")) dest = 1;
         else if (receivedDest.equals("02 Auditorium")) dest = 2;
         else if (receivedDest.equals("03 Chemistry")) dest = 3;
@@ -78,12 +80,7 @@ public class MapSolution extends AppCompatActivity {
         else if (receivedDest.equals("14 Sycamore Hall")) dest = 14;
         else if (receivedDest.equals("15 Terrill Hall")) dest = 15;
 
-        // DEBUG delete later
-        System.out.printf("Hello World\n");
-        System.out.printf("src: %d\n", src);
-        System.out.printf("dest: %d\n", dest);
-
-        // IMPORTANT: Put your code here
+        // IMPORTANT: Put your int main() code here
         Graph graph = new Graph();
 
         // Creating nodes (intersections or buildings)
@@ -118,21 +115,16 @@ public class MapSolution extends AppCompatActivity {
         List<String> path = graph.dijkstra(nodeE, nodeA);
 
         // Output the directions
+        // Note: I needed to change the way to output the results because has to be in concat string format
         if (path.isEmpty()) {
             // System.out.println("No path found from " + nodeE.getName() + " to " + nodeA.getName());
             src3.setText("No path found from " + nodeE.getName() + " to " + nodeA.getName());
         } else {
             String total = "";
-            for (String direction : path) {
-                // System.out.println(direction);
+            for (String direction : path)
                 total = total + direction + "\n";
-            }
-            // System.out.println("Shortest path from " + nodeE.getName() + " to " + nodeA.getName() + ":");
             src3.setText("Shortest path from " + nodeE.getName() + " to " + nodeA.getName() + ":\n" + total);
 
         }
-
-        // IMPORTANT: Put output of group in here as a string
-        // src3.setText("Source: " + receivedSrc + "\nDestination: " + receivedDest + "\nHacker Du was here!!!\nTurn Left in 3 min\nTurn Right in 5 min");
     }
 }
